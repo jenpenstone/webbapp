@@ -1,0 +1,5 @@
+.blue-button {
+    background-color: $blue;
+    background-image: linear-gradient($blue, darken($blue, 10%));
+    border-color: darken($blue, 20%);
+}

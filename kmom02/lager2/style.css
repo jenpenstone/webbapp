@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=PT+Serif&display=swap');
+
+html {
+    font-size: 100%;
+    background-color: #a3abad;
+}
+
+body {
+    line-height: 1.5;
+}
+
+main {
+    padding: 1.4rem 0.6rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #697f8c;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h4 {
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 2.8rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.4rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.4rem; /* fontsize 1rem * line-height 1.4 */
+    font-family: 'PT Serif', serif;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.bottom-nav a {
+    padding: 0.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.top-nav a {
+    padding: 1rem;
+    letter-spacing: 0.05rem;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.container img {
+    width: 100%;
+}
+
+.active {
+    background-color: #334154;
+    color: #eee;
+}
+
+.productLink {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
