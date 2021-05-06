@@ -1,6 +1,6 @@
 "use strict";
 
-import { home } from "./home.js";
+import { home } from "./views/home.js";
 
 //IIFE (Immediately-Invoked Function Expression)
 (function () {

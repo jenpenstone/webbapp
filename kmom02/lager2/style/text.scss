@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    font-family: $header-font;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 2.8rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.4rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+     margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+    /* fontsize 1rem * line-height 1.4 */
+    font-family: $text-font;
+}
+
+.picklist {
+    border-top: 1px solid black;
+    padding: 1rem;
+    p {
+        font-size: 1rem;
+        margin-block-start: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

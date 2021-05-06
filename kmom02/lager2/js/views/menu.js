@@ -2,6 +2,7 @@
 
 import { home } from "./home.js";
 import { warehouse } from "./warehouse.js";
+import { orderlist } from "./orderlist.js";
 
 var menu = {
     showMenu: function (selected) {
@@ -11,7 +12,8 @@ var menu = {
         //create menu and add style-class and function for when nav is clicked on.
         let navElements = [
             {name: "Start", class: "home", nav: home.showHome},
-            {name: "Lager", class: "storage", nav: warehouse.showProducts}
+            {name: "Lager", class: "storage", nav: warehouse.showProducts},
+            {name: "Order", class: "local_shipping", nav: orderlist.showOrders}
         ];
 
         navElements.forEach(function (element) {

@@ -1,0 +1,57 @@
+nav {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: $nav-color;
+    background-image: linear-gradient($nav-color, darken($nav-color, 5%));
+    border: 2px solid darken($nav-color, 10%);
+    font-weight: bold;
+    font-family: $header-font;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.bottom-nav {
+    a {
+        padding: 0.5rem;
+        letter-spacing: $letter-space-btn;
+        border: 1px solid darken($nav-color, 10%);
+    }
+}
+
+.top-nav {
+     a {
+         padding: 1rem;
+         letter-spacing: $letter-space-btn;
+     }
+}
+
+.active {
+    background-color: $active-background-color;
+    color: $active-text-color;
+    background-image: linear-gradient($active-background-color, darken($active-background-color, 5%));
+}
+
+.listLink {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: $letter-space-btn;
+    background-image: linear-gradient($background-color, darken($background-color, 5%));
+}
+
+.button {
+    padding: 1rem;
+    letter-spacing: $letter-space-btn;
+    border: 1px solid darken($nav-color, 10%);
+    background-color: $nav-color;
+    margin-top: 2rem;
+    text-align: center;
+}
