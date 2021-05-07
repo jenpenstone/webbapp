@@ -49,7 +49,7 @@ echo "${PROMPT}Ready to begin."
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq 'keys' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.1" false
@@ -71,7 +71,7 @@ assertEqual "1.1" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.2" false
@@ -92,7 +92,7 @@ assertEqual "1.2" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.pagination.next_url' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.3" false
@@ -112,7 +112,7 @@ assertEqual "1.3" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[9].likes.count' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.4" false
@@ -131,7 +131,7 @@ assertEqual "1.4" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].tags' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.5" false
@@ -151,7 +151,7 @@ assertEqual "1.5" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].caption.from' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.6" false
@@ -171,7 +171,7 @@ assertEqual "1.6" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].location.name' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.7" false
@@ -191,7 +191,7 @@ assertEqual "1.7" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].comments.data[0].text' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.8" false
@@ -212,7 +212,7 @@ assertEqual "1.8" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].likes.data[1].username' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.9" false
@@ -232,7 +232,7 @@ assertEqual "1.9" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.data[0].images.standard_resolution.url' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.10" false
@@ -253,7 +253,7 @@ assertEqual "1.10" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.11" false
@@ -273,8 +273,7 @@ assertEqual "1.11" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
-
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.12" false
 
@@ -293,7 +292,7 @@ assertEqual "1.12" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.13" false
@@ -314,7 +313,7 @@ assertEqual "1.13" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.14" false
@@ -335,7 +334,7 @@ assertEqual "1.14" false
 
 
 
-ANSWER="Replace this text with the variable holding the answer."
+ANSWER=$(jq '.meta.code' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.15" false

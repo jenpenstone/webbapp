@@ -1,6 +1,6 @@
 "use strict";
 
-import { api_key, base_url } from "./vars.js";
+import { apiKey, baseUrl } from "./vars.js";
 
 var products = {
 
@@ -12,7 +12,7 @@ var products = {
         }
 
         //Get content from Lager API
-        fetch(`${base_url}products?api_key=${api_key}`)
+        fetch(`${baseUrl}products?api_key=${apiKey}`)
             .then(function(response) {
                 return response.json();
             })
@@ -27,8 +27,34 @@ var products = {
         return products.allProducts.find(product => product.id === productId);
     },
 
+    upDateProduct: function(productId, amount) {
+        var product = products.getProduct(productId);
+        var newStock = product.id - amount;
+
+        var prodData = {
+            id: product.id,
+            name: product.name,
+            stock: newStock,
+            api_key: apiKey
+        };
+
+        fetch(`${baseUrl}products`, {
+            body: JSON.stringify(prodData),
+            headers: {
+                'content-type': 'application/json'
+            },
+            method: 'PUT'
+        })
+            .then(function (response) {
+                if (response) {
+                    return true;
+                }
+            });
+    },
+
     getStock: function(productId) {
         let prod = products.getProduct(productId);
+
         return prod.stock;
     }
 

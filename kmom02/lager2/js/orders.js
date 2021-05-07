@@ -1,6 +1,7 @@
 "use strict";
 
-import { api_key, base_url } from "./vars.js";
+import { products } from "./products.js";
+import { apiKey, baseUrl } from "./vars.js";
 
 var orders = {
 
@@ -12,7 +13,7 @@ var orders = {
         }
 
         //Get content from Lager API
-        fetch(`${base_url}orders?api_key=${api_key}`)
+        fetch(`${baseUrl}orders?api_key=${apiKey}`)
             .then(function(response) {
                 return response.json();
             })
@@ -27,11 +28,41 @@ var orders = {
         return orders.allOrders.find(order => order.id === orderId);
     },
 
+    updateProducts: function(order) {
+        order.forEach(product => {
+            //update stock for product
+            var pId = product.product_id;
+            var amount = product.amount;
+
+            products.updateStock(pId, amount);
+        });
+    },
+
     updateOrder: function(orderId) {
+        //get order info
+        var order = orders.getOrder(orderId);
 
-        return;
+        //update status in Lager API
+        var orderData = {
+            id: orderId,
+            name: order.name,
+            status_id: 200,
+            api_key: apiKey
+        };
+
+        fetch(`${baseUrl}orders`, {
+            body: JSON.stringify(orderData),
+            headers: {
+                'content-type': 'application/json'
+            },
+            method: 'PUT'
+        })
+            .then(function (response) {
+                if (response) {
+                    orders.updateProducts(order);
+                }
+            });
     }
-
 };
 
 export { orders };

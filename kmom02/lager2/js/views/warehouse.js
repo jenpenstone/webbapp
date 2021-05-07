@@ -9,7 +9,7 @@ var warehouse = {
     showProducts: function () {
         products.getAllProducts(warehouse.renderProducts);
     },
-    
+
     renderProducts: function () {
         //Clean up page from old content
         window.mainContainer.innerHTML = "";
@@ -29,7 +29,6 @@ var warehouse = {
             prodElement.className = "listLink";
 
             window.mainContainer.appendChild(prodElement);
-
         });
 
         window.rootElement.appendChild(window.mainContainer);

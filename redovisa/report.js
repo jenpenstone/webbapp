@@ -27,6 +27,15 @@ var report = (function () {
                 window.mainContainer.innerHTML += md.render(result);
             });
 
+        //Get kmom02 text from markdown file
+        fetch("markdown/kmom02.md")
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(result) {
+                window.mainContainer.innerHTML += md.render(result);
+            });
+
         //Add menu to page
         menu.showMenu("article");
     };

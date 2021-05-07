@@ -6,7 +6,6 @@ import { warehouse } from "./warehouse.js";
 var productDetails = {
 
     showProduct: function () {
-        
         //Clean up page from old content
         window.mainContainer.innerHTML = "";
         window.navigation.innerHTML = "";
@@ -38,7 +37,7 @@ var productDetails = {
 
         //Get product from products list
         let product = products.getProduct(id);
-        
+
         prodInfo.innerHTML =   `<p><strong>${product.name}</strong></p>
         <p><strong>Id: </strong>${product.id}</p>
         <p><strong>Artikelnummer: </strong>${product.article_number}</p>

@@ -9,7 +9,7 @@ var orderlist = {
     showOrders: function () {
         orders.getAllOrders(orderlist.renderOrders);
     },
-    
+
     renderOrders: function () {
         //Clean up page from old content
         window.mainContainer.innerHTML = "";
@@ -29,7 +29,6 @@ var orderlist = {
             orderElement.className = "listLink";
 
             window.mainContainer.appendChild(orderElement);
-
         });
 
         window.rootElement.appendChild(window.mainContainer);
