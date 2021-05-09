@@ -20,12 +20,20 @@ var warehouse = {
         title.textContent = "Lager";
         window.mainContainer.appendChild(title);
 
-        products.allProducts.map(function (dataProduct) {
-            let prodElement = document.createElement("a");
+        let prodHeader = document.createElement("div");
 
-            prodElement.id = dataProduct.id;
-            prodElement.textContent = `${dataProduct.name}:    ${dataProduct.stock}st`;
-            prodElement.addEventListener("click", productDetails.showProduct);
+        prodHeader.className = "listHeader";
+        prodHeader.innerHTML = `<h4>Namn</h4><h4>Antal i lager</h4>`;
+
+        window.mainContainer.appendChild(prodHeader);
+
+        products.allProducts.map(function (dataProduct) {
+            let prodElement = document.createElement("div");
+
+            prodElement.innerHTML = `<p>${dataProduct.name}</p><p>${dataProduct.stock}</p>`;
+            prodElement.addEventListener("click", function() {
+                productDetails.showProduct(dataProduct.id);
+            });
             prodElement.className = "listLink";
 
             window.mainContainer.appendChild(prodElement);

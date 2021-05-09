@@ -5,7 +5,7 @@ import { warehouse } from "./warehouse.js";
 
 var productDetails = {
 
-    showProduct: function () {
+    showProduct: function (productId) {
         //Clean up page from old content
         window.mainContainer.innerHTML = "";
         window.navigation.innerHTML = "";
@@ -32,11 +32,8 @@ var productDetails = {
         window.mainContainer.appendChild(title);
         window.mainContainer.appendChild(prodInfo);
 
-        //console.log(event.target.id);
-        let id = parseInt(event.target.id);
-
         //Get product from products list
-        let product = products.getProduct(id);
+        let product = products.getProduct(productId);
 
         prodInfo.innerHTML =   `<p><strong>${product.name}</strong></p>
         <p><strong>Id: </strong>${product.id}</p>

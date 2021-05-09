@@ -42,3 +42,21 @@ p {
         margin-bottom: 0.5rem;
     }
 }
+
+.listHeader {
+    display: flow-root;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: $letter-space-btn;
+    background-color: $nav-color;
+    height: fit-content;
+    h4 {
+        font-size: 1rem;
+        float: right;
+    }
+}
+
+.listHeader :first-child {
+    float: left;
+}

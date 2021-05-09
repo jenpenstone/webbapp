@@ -212,7 +212,7 @@ assertEqual "1.8" false
 
 
 
-ANSWER=$(jq '.data[0].likes.data[1].username' tag-dbwebb.json)
+ANSWER=$(jq '.data[0].likes.data[1].full_name' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.9" false
@@ -253,7 +253,7 @@ assertEqual "1.10" false
 
 
 
-ANSWER=$(jq '.meta.code' tag-dbwebb.json)
+ANSWER=$(jq '.data[].comments.data[] | select(.from.username == "alkifaey") | .text' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.11" false
@@ -273,7 +273,7 @@ assertEqual "1.11" false
 
 
 
-ANSWER=$(jq '.meta.code' tag-dbwebb.json)
+ANSWER=$(jq '.data[] | select(.comments.data[].from.username == "tobhed") | .link' tag-dbwebb.json)
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.12" false
 
@@ -292,7 +292,7 @@ assertEqual "1.12" false
 
 
 
-ANSWER=$(jq '.meta.code' tag-dbwebb.json)
+ANSWER=$(jq '.data[] | select(.likes.count > 7) | .link' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.13" false
@@ -313,7 +313,7 @@ assertEqual "1.13" false
 
 
 
-ANSWER=$(jq '.meta.code' tag-dbwebb.json)
+ANSWER=$(jq '.data[] | select(.likes.count > 5) | select(.comments.count > 0) | .link' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.14" false
@@ -334,7 +334,7 @@ assertEqual "1.14" false
 
 
 
-ANSWER=$(jq '.meta.code' tag-dbwebb.json)
+ANSWER=$(jq '.data[] | select(.location.name == "Studentviken") | .likes.data[].username' tag-dbwebb.json)
 
 # I will now test your answer - change false to true to get a hint.
 assertEqual "1.15" false
